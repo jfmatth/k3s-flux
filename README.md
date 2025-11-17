@@ -23,8 +23,20 @@ $env:KUBECONFIG=".\kubeconfig"
 kubectl get nodes
 ```
 
+### Datadog
+https://us5.datadoghq.com/fleet/install-agent/latest?platform=kubernetes
+
+Install operator with secret from DD
+
+Create agent with ```datadog-agent.yaml```
+```
+kubectl apply -f datadog-agent.yaml -n datadog
+```
+
+
+
 ## Install Flux (https://fluxcd.io/flux/get-started/)
-Access Token is setup in GH
+FINE GRAINED Access Token is setup in GH
 
 ### Setup variables
 ```
@@ -38,9 +50,33 @@ flux check --pre
 
 ```
 flux bootstrap github `
+  --token-auth `
   --owner=$env:GITHUB_USER `
   --repository=k3s-flux `
   --branch=master `
   --path=./clusters/my-cluster `
   --personal
+```
+
+### Podinfo 
+Following the Getting Started, add PodInfo to Flux
+```
+flux create source git podinfo `
+  --url=https://github.com/stefanprodan/podinfo `
+  --branch=master `
+  --interval=1m `
+  --export > ./clusters/my-cluster/podinfo-source.yaml
+```
+
+```
+flux create kustomization podinfo `
+  --target-namespace=default `
+  --source=podinfo `
+  --path="./kustomize" `
+  --prune=true `
+  --wait=true `
+  --interval=30m `
+  --retry-interval=2m `
+  --health-check-timeout=3m `
+  --export > ./clusters/my-cluster/podinfo-kustomization.yaml
 ```
