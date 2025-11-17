@@ -33,8 +33,6 @@ Create agent with ```datadog-agent.yaml```
 kubectl apply -f datadog-agent.yaml -n datadog
 ```
 
-
-
 ## Install Flux (https://fluxcd.io/flux/get-started/)
 FINE GRAINED Access Token is setup in GH
 
