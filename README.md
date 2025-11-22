@@ -78,3 +78,18 @@ flux create kustomization podinfo `
   --health-check-timeout=3m `
   --export > ./clusters/my-cluster/podinfo-kustomization.yaml
 ```
+
+### JustNeverLift
+```
+flux create image repository justneverlift `
+--image=ghcr.io/jfmatth/justneverlift.com `
+--interval=5m `
+--export > .\clusters\my-cluster\justneverlift.com\jnl-imagerepository.yaml
+```
+
+```
+flux create image policy justneverlift `
+--image-ref=justneverlift `
+--select-semver=2025.0.0 `
+--export > .\clusters\my-cluster\justneverlift.com\jnl-imagepolicy.yaml
+```
