@@ -14,10 +14,10 @@ spec:
         name: justneverlift
         namespace: flux-system
       interval: 10m
-  chartRef:
-    kind: HelmChart
-    name: justneverlift
-    namespace: flux-system
+  # chartRef:
+  #   kind: HelmChart
+  #   name: justneverlift
+  #   namespace: flux-system
   values:
     image:
       repository: ghcr.io/jfmatth/justneverlift.com  # {"$imagepolicy": "flux-system:justneverlift:name"}
