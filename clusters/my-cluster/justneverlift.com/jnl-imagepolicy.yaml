@@ -8,9 +8,9 @@ spec:
   imageRepositoryRef:
     name: justneverlift
   filterTags:
-    pattern: ^(?P<YEAR>\d+)\.(?P<MONTH>\d+)\.(?P<DAY>\d+)\.(?P<PATCH>\d+)(-hotfix(?P<QUANTIFIER>\d+))?$
-    extract: $YEAR.$MONTH.$DAY
+    pattern: ^v(?P<YEAR>\d+)\.(?P<MONTH>\d+)\.(?P<DAY>\d+)\.(?P<PATCH>\d+)(-hotfix(?P<QUANTIFIER>\d+))?$
+    extract: $YEAR$MONTH$DAY.$PATCH.${QUANTIFIER}0
   policy:
     semver:
-      range: ">=2025.0.0"
+      range: ">=0.0.0"
 
