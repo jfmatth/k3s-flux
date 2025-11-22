@@ -8,11 +8,18 @@ spec:
   chart:
     spec:
       chart: ./_helm
-      version: '1.0.x'
+      version: '0.1.0'
       sourceRef:
         kind: GitRepository
         name: justneverlift
         namespace: flux-system
       interval: 10m
+  chartRef:
+    kind: HelmChart
+    name: justneverlift
+    namespace: flux-system
   values:
+    image:
+      repository: ghcr.io/jfmatth/justneverlift.com  # {"$imagepolicy": "flux-system:justneverlift:name"}
+      tag: v2025.11.20.0                             # {"$imagepolicy": "flux-system:justneverlift:tag"}
     replicaCount: 2
