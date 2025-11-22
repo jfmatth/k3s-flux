@@ -9,8 +9,8 @@ spec:
     name: justneverlift
   filterTags:
     pattern: ^(?P<YEAR>\d+)\.(?P<MONTH>\d+)\.(?P<DAY>\d+)\.(?P<PATCH>\d+)(-hotfix(?P<QUANTIFIER>\d+))?$
-    extract: $YEAR$MONTH$DAY
+    extract: $YEAR.$MONTH.$DAY
   policy:
     semver:
-      range: ">=0.0.0"
+      range: ">=2025.0.0"
 
