@@ -33,7 +33,7 @@ Create agent with ```datadog-agent.yaml```
 kubectl apply -f datadog-agent.yaml -n datadog
 ```
 
-## Install Flux (https://fluxcd.io/flux/get-started/)
+## Install Flux (https://fluxcd.io/flux/guides/image-update/)
 FINE GRAINED Access Token is setup in GH
 
 ### Setup variables
@@ -48,7 +48,7 @@ flux check --pre
 
 ```
 flux bootstrap github `
-  --token-auth `
+  --components-extra=image-reflector-controller,image-automation-controller `
   --owner=$env:GITHUB_USER `
   --repository=k3s-flux `
   --branch=master `

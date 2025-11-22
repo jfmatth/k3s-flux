@@ -9,4 +9,4 @@ spec:
     name: justneverlift
   policy:
     semver:
-      range: 2025.11.x
+      range: ">2025.11.x"
