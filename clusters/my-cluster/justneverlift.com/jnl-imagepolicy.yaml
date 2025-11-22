@@ -8,5 +8,6 @@ spec:
   imageRepositoryRef:
     name: justneverlift
   policy:
-    semver:
-      range: ">2025.11.x"
+    calver:
+      layout: 'YYYY.MM.DD'
+      order: asc
