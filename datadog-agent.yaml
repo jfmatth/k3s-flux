@@ -9,6 +9,7 @@ spec:
       apiSecret:
         secretName: "datadog-secret"
         keyName: "api-key"
+    clusterName: vps-okd
   features:
     logCollection:
       enabled: true
