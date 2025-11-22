@@ -9,4 +9,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: justneverlift
+    namespace: flux-system
   # version: '*'
