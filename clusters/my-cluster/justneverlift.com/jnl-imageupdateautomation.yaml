@@ -13,9 +13,10 @@ spec:
       ref:
         branch: master
     commit:
-      authorName: flux-bot
-      authorEmail: flux-bot@example.com
-      messageTemplate: 'Update image to {{ .NewImage }}'
+      author:
+        email: fluxcdbot@users.noreply.github.com
+        name: fluxcdbot
+      messageTemplate: '{{range .Changed.Changes}}{{print .OldValue}} -> {{println .NewValue}}{{end}}'
     push:
       branch: master
   update:
