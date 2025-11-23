@@ -21,4 +21,4 @@ spec:
   values:
     image:
       repository: ghcr.io/jfmatth/justneverlift.com   # {"$imagepolicy": "flux-system:justneverlift:name"}
-      tag: v2025.11.22.1                              # {"$imagepolicy": "flux-system:justneverlift:tag"}
+      tag: ReplacedByFlux                             # {"$imagepolicy": "flux-system:justneverlift:tag"}
