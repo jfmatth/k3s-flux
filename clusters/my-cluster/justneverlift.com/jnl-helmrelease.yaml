@@ -22,4 +22,3 @@ spec:
     image:
       repository: ghcr.io/jfmatth/justneverlift.com  # {"$imagepolicy": "flux-system:justneverlift:name"}
       tag: v2025.11.22.0                             # {"$imagepolicy": "flux-system:justneverlift:tag"}
-    replicaCount: 2
