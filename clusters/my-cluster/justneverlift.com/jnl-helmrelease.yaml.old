@@ -2,9 +2,9 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: justneverlift
-  namespace: justneverlift
+  namespace: flux-system
 spec:
-  interval: 10m
+  interval: 1m
   # chart:
   #   spec:
       # chart: ./_helm
