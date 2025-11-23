@@ -4,23 +4,19 @@ metadata:
   name: justneverlift
   namespace: justneverlift
 spec:
-  interval: 1m
+  interval: 1d
   chart:
     spec:
       chart: ./_helm
-      version: '0.1.0'
+      # version: '0.1.0'
       sourceRef:
         kind: GitRepository
         name: justneverlift
         namespace: flux-system
       interval: 10m
-      valuesFiles:
-        - values.yaml
-        
-  # chartRef:
-  #   kind: HelmChart
-  #   name: justneverlift
-  #   namespace: flux-system
+      # valuesFiles:
+      #   - values.yaml
+  
   values:
     image:
       repository: ghcr.io/jfmatth/justneverlift.com # {"$imagepolicy": "flux-system:justneverlift:name"}
