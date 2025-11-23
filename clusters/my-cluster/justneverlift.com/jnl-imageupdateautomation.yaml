@@ -21,4 +21,4 @@ spec:
       branch: master
   update:
     strategy: Setters
-    path: ./clusters/my-cluster
+    path: ./clusters/my-cluster/justneverlift
