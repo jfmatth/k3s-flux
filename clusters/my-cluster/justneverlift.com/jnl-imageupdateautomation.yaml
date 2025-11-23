@@ -1,0 +1,23 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageUpdateAutomation
+metadata:
+  name: justneverlift
+  namespace: flux-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: justneverlift
+  git:
+    checkout:
+      ref:
+        branch: master
+    commit:
+      authorName: flux-bot
+      authorEmail: flux-bot@example.com
+      messageTemplate: 'Update image to {{ .NewImage }}'
+    push:
+      branch: master
+  update:
+    strategy: Setters
+    path: ./clusters/my-cluster
