@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmChart
 metadata:
   name: justneverlift
-  namespace: justneverlift
+  namespace: flux-system
 spec:
   interval: 5m0s
   chart: ./_helm
