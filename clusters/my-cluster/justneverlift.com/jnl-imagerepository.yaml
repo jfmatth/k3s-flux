@@ -6,4 +6,4 @@ metadata:
   namespace: flux-system
 spec:
   image: ghcr.io/jfmatth/justneverlift.com
-  interval: 10m
+  interval: 1d
