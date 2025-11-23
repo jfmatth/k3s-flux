@@ -5,20 +5,20 @@ metadata:
   namespace: justneverlift
 spec:
   interval: 10m
-  chart:
-    spec:
-      chart: ./_helm
-      version: '0.1.0'
-      sourceRef:
-        kind: GitRepository
-        name: justneverlift
-        namespace: flux-system
-      interval: 10m
-  # chartRef:
-  #   kind: HelmChart
-  #   name: justneverlift
-  #   namespace: flux-system
-  # values:
-  #   image:
-  #     repository: ghcr.io/jfmatth/justneverlift.com
-  #     tag: '{{ .image.justneverlift }}'
+  # chart:
+  #   spec:
+      # chart: ./_helm
+      # version: '0.1.0'
+      # sourceRef:
+      #   kind: GitRepository
+      #   name: justneverlift
+      #   namespace: flux-system
+      # interval: 10m
+  chartRef:
+    kind: HelmChart
+    name: justneverlift
+    namespace: flux-system
+  values:
+    image:
+      repository: ghcr.io/jfmatth/justneverlift.com   # {"$imagepolicy": "flux-system:justneverlift:name"}
+      tag: 1.0                                        # {"$imagepolicy": "flux-system:justneverlift:tag"}
