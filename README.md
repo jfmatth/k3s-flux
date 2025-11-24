@@ -49,14 +49,17 @@ flux check --pre
 ```
 flux bootstrap github `
   --components-extra=image-reflector-controller,image-automation-controller `
-  --owner=$env:GITHUB_USER `
-  --repository=https://github.com/jfmatth/k3s-flux.git `
+  --owner=jfmatth `
+  --repository=k3s-flux `
   --token-auth `
   --branch=master `
   --private=false `
   --personal `
   --path=./clusters/my-cluster
 ```
+
+**Make sure to use ```--token-auth``` for https only, otherwise it will default to SSH**
+
 
 <!-- ### Podinfo 
 Following the Getting Started, add PodInfo to Flux
