@@ -4,7 +4,7 @@ metadata:
   name: justneverlift
   namespace: flux-system
 spec:
-  interval: 5m0s
+  interval: 1m0s
   chart: ./_helm
   sourceRef:
     kind: GitRepository
