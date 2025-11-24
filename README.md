@@ -50,13 +50,15 @@ flux check --pre
 flux bootstrap github `
   --components-extra=image-reflector-controller,image-automation-controller `
   --owner=$env:GITHUB_USER `
-  --repository=k3s-flux `
+  --repository=https://github.com/jfmatth/k3s-flux.git `
+  --token-auth `
   --branch=master `
-  --path=./clusters/my-cluster `
-  --personal
+  --private=false `
+  --personal `
+  --path=./clusters/my-cluster
 ```
 
-### Podinfo 
+<!-- ### Podinfo 
 Following the Getting Started, add PodInfo to Flux
 ```
 flux create source git podinfo `
@@ -92,4 +94,4 @@ flux create image policy justneverlift `
 --image-ref=justneverlift `
 --select-semver=2025.0.0 `
 --export > .\clusters\my-cluster\justneverlift.com\jnl-imagepolicy.yaml
-```
+``` -->
