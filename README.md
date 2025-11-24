@@ -39,7 +39,7 @@ FINE GRAINED Access Token is setup in GH
 ### Setup variables
 ```
 $env:GITHUB_TOKEN=" "
-$env:GITHUB_USER="jfmatth"
+
 ```
 ### Check and install
 ```
