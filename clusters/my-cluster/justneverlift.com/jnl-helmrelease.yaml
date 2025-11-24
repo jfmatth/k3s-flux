@@ -14,8 +14,9 @@ spec:
         name: justneverlift
         namespace: flux-system
       interval: 24h
-      # valuesFiles:
-      #   - values.yaml
+  valuesFiles:
+    - values.yaml
+    
   values:
     image:
       repository: ghcr.io/jfmatth/justneverlift.com # {"$imagepolicy": "flux-system:justneverlift:name"}
