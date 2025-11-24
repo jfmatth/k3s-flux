@@ -6,6 +6,7 @@ metadata:
 spec:
   interval: 1m0s
   chart: ./_helm
+  reconcileStrategy: Revision
   sourceRef:
     kind: GitRepository
     name: justneverlift
