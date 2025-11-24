@@ -9,8 +9,3 @@ spec:
   sourceRef:
     kind: GitRepository
     name: justneverlift
-
-  valuesFiles:
-    - values.yaml
-    
-
