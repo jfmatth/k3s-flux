@@ -17,6 +17,3 @@ spec:
     image:
       repository: ghcr.io/jfmatth/justneverlift.com # {"$imagepolicy": "flux-system:justneverlift:name"}
       tag: v2025.11.22.2 # {"$imagepolicy": "flux-system:justneverlift:tag"}
-
-    ingress:
-      enabled: true
