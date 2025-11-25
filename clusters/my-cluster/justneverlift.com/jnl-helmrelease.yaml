@@ -13,6 +13,7 @@ spec:
         name: justneverlift
         namespace: flux-system
       interval: 1m
+      reconcileStrategy: Revision
   values:
     image:
       repository: ghcr.io/jfmatth/justneverlift.com # {"$imagepolicy": "flux-system:justneverlift:name"}
