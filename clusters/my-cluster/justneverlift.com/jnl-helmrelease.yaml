@@ -4,7 +4,7 @@ metadata:
   name: justneverlift
   namespace: justneverlift
 spec:
-  interval: 1m
+  interval: 24h
   chart:
     spec:
       chart: ./_helm
@@ -12,7 +12,7 @@ spec:
         kind: GitRepository
         name: justneverlift
         namespace: flux-system
-      interval: 1m
+      interval: 24h
       reconcileStrategy: Revision
   values:
     image:
