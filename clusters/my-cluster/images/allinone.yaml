@@ -46,8 +46,8 @@ spec:
       reconcileStrategy: Revision
   values:
     image:
-      repository: ghcr.ghcr.io/jfmatth/tornado-imageserver # {"$imagepolicy": "flux-system:images:name"}
-      tag: v1.31                                           # {"$imagepolicy": "flux-system:images:tag"}
+      repository: ghcr.io/jfmatth/tornado-imageserver # {"$imagepolicy": "flux-system:images:name"}
+      tag: v1.31                                      # {"$imagepolicy": "flux-system:images:tag"}
 ---
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
