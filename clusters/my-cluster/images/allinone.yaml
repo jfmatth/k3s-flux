@@ -1,0 +1,75 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: images
+---
+
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: images
+  namespace: flux-system
+spec:
+  interval: 24h
+  url: https://github.com/jfmatth/tornado-imageserver
+  ref:
+    branch: master
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmChart
+metadata:
+  name: images
+  namespace: flux-system
+spec:
+  interval: 24h
+  chart: ./_helm
+  sourceRef:
+    kind: GitRepository
+    name: images
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: images
+  namespace: images
+spec:
+  interval: 24h
+  chart:
+    spec:
+      chart: ./_helm
+      sourceRef:
+        kind: GitRepository
+        name: images
+        namespace: flux-system
+      interval: 24h
+      reconcileStrategy: Revision
+  values:
+    image:
+      repository: ghcr.ghcr.io/jfmatth/tornado-imageserver # {"$imagepolicy": "flux-system:images:name"}
+      tag: v1.31                                           # {"$imagepolicy": "flux-system:images:tag"}
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: images
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: images
+  filterTags:
+    pattern: '^v\d+\.\d{2}$'
+  policy:
+    alphabetical:
+      order: asc
+  digestReflectionPolicy: Always
+  interval: 24h
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageRepository
+metadata:
+  name: images
+  namespace: flux-system
+spec:
+  image: ghcr.ghcr.io/jfmatth/tornado-imageserver
+  interval: 24h
