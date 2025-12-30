@@ -71,5 +71,5 @@ metadata:
   name: images
   namespace: flux-system
 spec:
-  image: ghcr.ghcr.io/jfmatth/tornado-imageserver
+  image: ghcr.io/jfmatth/tornado-imageserver
   interval: 24h
