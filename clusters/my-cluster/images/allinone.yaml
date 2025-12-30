@@ -45,7 +45,7 @@ spec:
   values:
     image:
       repository: ghcr.io/jfmatth/tornado-imageserver # {"$imagepolicy": "flux-system:images:name"}
-      tag: v1.31                                      # {"$imagepolicy": "flux-system:images:tag"}
+      tag: v1.32 # {"$imagepolicy": "flux-system:images:tag"}
 ---
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
