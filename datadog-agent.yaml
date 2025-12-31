@@ -1,4 +1,4 @@
-kind: "DatadogAgent"
+kind: DatadogAgent
 apiVersion: "datadoghq.com/v2alpha1"
 metadata:
   name: "datadog"
@@ -11,6 +11,23 @@ spec:
         keyName: "api-key"
     clusterName: vps-okd
   features:
+    apm:
+      enabled: true
+      instrumentation:
+        enabled: true
+        targets:
+          - name: "default-target"
+            ddTraceVersions:
+              python: "4"
+            # ddTraceConfigs:
+            #   - name: "DD_PROFILING_ENABLED"
+            #     value: "auto"
     logCollection:
       enabled: true
       containerCollectAll: true
+    usm:
+      enabled: true
+    npm:
+      enabled: true
+    liveProcessCollection:
+      enabled: true
