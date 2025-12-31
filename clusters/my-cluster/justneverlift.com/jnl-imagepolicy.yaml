@@ -14,4 +14,4 @@ spec:
     alphabetical:
       order: asc
   digestReflectionPolicy: Always
-  interval: 24h
+  interval: 10m
