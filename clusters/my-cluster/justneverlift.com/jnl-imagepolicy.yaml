@@ -12,7 +12,7 @@ spec:
     #   vYYYY.MM.DD
     #   vYYYY.MM.DD-PATCH
     pattern: ^v(?P<YEAR>\d{4})\.(?P<MONTH>\d{2})\.(?P<DAY>\d{2})(-(?P<PATCH>\d+))?$
-    extract: $YEAR$MONTH$DAY.${PATCH}0
+    extract: $YEAR$MONTH$DAY.$PATCH
 
   policy:
     alphabetical:
