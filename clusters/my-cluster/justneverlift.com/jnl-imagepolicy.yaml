@@ -8,11 +8,11 @@ spec:
     name: justneverlift
 
   filterTags:
-    # Capture your vYYYY.MM.DD.PATCH[-hotfixN] format
-    pattern: ^v(?P<YEAR>\d+)\.(?P<MONTH>\d+)\.(?P<DAY>\d+)\.(?P<PATCH>\d+)(-hotfix(?P<QUANTIFIER>\d+))?$
-    # Convert to a valid semver: YEAR.MONTH.DAY-PATCH
-    # Example: v2025.12.30.10 → 2025.12.30-10
-    extract: $YEAR.$MONTH.$DAY-$PATCH
+    # Match vYYYY.MM.DD
+    pattern: ^v(?P<YEAR>\d+)\.(?P<MONTH>\d+)\.(?P<DAY>\d+)$
+    # Convert to semver: YEAR.MONTH.DAY
+    # Example: v2026.01.03 → 2026.01.03
+    extract: $YEAR.$MONTH.$DAY
 
   policy:
     semver:
