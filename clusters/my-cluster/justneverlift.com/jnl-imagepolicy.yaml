@@ -8,9 +8,11 @@ spec:
     name: justneverlift
 
   filterTags:
-    # Matches: v2025.10.05-1
-    pattern: ^v(?P<YEAR>\d{4})\.(?P<MONTH>\d{2})\.(?P<DAY>\d{2})-(?P<PATCH>\d+)$
-    extract: $YEAR$MONTH$DAY.$PATCH
+    # Supports:
+    #   vYYYY.MM.DD
+    #   vYYYY.MM.DD-PATCH
+    pattern: ^v(?P<YEAR>\d{4})\.(?P<MONTH>\d{2})\.(?P<DAY>\d{2})(-(?P<PATCH>\d+))?$
+    extract: $YEAR$MONTH$DAY.${PATCH}0
 
   policy:
     alphabetical:
