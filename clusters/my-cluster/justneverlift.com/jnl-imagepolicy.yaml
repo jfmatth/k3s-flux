@@ -8,9 +8,9 @@ spec:
     name: justneverlift
 
   filterTags:
-    # vYYYY.MM.DD-PATCH or vYYYY.MM.DD-PATCH-HOTFIX
-    pattern: ^v(?P<YEAR>\d{4})\.(?P<MONTH>\d{2})\.(?P<DAY>\d{2})-(?P<PATCH>\d+)(-(?P<HOTFIX>\d+))?$
-    extract: $YEAR$MONTH$DAY.$PATCH.${HOTFIX}0
+    # Matches: v2025.10.05-1
+    pattern: ^v(?P<YEAR>\d{4})\.(?P<MONTH>\d{2})\.(?P<DAY>\d{2})-(?P<PATCH>\d+)$
+    extract: $YEAR$MONTH$DAY.$PATCH
 
   policy:
     alphabetical:
