@@ -8,15 +8,13 @@ spec:
     name: justneverlift
 
   filterTags:
-    # Match vYYYY.MM.DD
-    pattern: ^v(?P<YEAR>\d+)\.(?P<MONTH>\d+)\.(?P<DAY>\d+)$
-    # Convert to semver: YEAR.MONTH.DAY
-    # Example: v2026.01.03 → 2026.01.03
-    extract: $YEAR.$MONTH.$DAY
+    # vYYYY.MM.DD-PATCH or vYYYY.MM.DD-PATCH-HOTFIX
+    pattern: ^v(?P<YEAR>\d{4})\.(?P<MONTH>\d{2})\.(?P<DAY>\d{2})-(?P<PATCH>\d+)(-(?P<HOTFIX>\d+))?$
+    extract: $YEAR$MONTH$DAY.$PATCH.${HOTFIX}0
 
   policy:
-    semver:
-      range: ">=0.0.0"
+    alphabetical:
+      order: asc
 
   digestReflectionPolicy: Always
   interval: 60m
