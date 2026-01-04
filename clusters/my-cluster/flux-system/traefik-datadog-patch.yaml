@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: traefik
+  namespace: kube-system
+spec:
+  template:
+    spec:
+      containers:
+        - name: traefik
+          args:
+            - "--metrics.datadog=true"
+            - "--metrics.datadog.address=datadog-agent.datadog.svc.cluster.local:8125"
+          env:
+            - name: DD_AGENT_HOST
+              value: "datadog-agent.datadog.svc.cluster.local"
+            - name: DD_DOGSTATSD_PORT
+              value: "8125"
