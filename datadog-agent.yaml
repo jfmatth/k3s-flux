@@ -4,7 +4,7 @@ metadata:
   name: "datadog"
 spec:
   global:
-    clusterName: "k3s"
+    # clusterName: "k3s"
     site: "us5.datadoghq.com"
     credentials:
       apiSecret:
