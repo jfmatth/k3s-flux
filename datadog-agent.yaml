@@ -20,10 +20,10 @@ spec:
     apm:
       instrumentation:
         enabled: true
-        targets:
-          - name: "default-target"
-            ddTraceVersions:
-              python: "4"
+        # targets:
+        #   - name: "default-target"
+        #     ddTraceVersions:
+        #       python: "4"
     logCollection:
       enabled: true
       containerCollectAll: true
