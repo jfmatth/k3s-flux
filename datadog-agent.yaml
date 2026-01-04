@@ -19,7 +19,7 @@ spec:
       enabled: true
     apm:
       instrumentation:
-        enabled: true
+        enabled: false
         # targets:
         #   - name: "default-target"
         #     ddTraceVersions:
