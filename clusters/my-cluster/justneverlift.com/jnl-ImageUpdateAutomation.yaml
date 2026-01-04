@@ -1,0 +1,23 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageUpdateAutomation
+metadata:
+  name: justneverlift
+  namespace: flux-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  git:
+    commit:
+      author:
+        email: flux@justneverlift.com
+        name: Flux Bot
+    checkout:
+      ref:
+        branch: master
+    push:
+      branch: master
+  update:
+    path: ./clusters/my-cluster/justneverlift.com
+    strategy: Setters
