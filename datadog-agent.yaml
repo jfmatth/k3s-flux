@@ -9,7 +9,6 @@ spec:
       apiSecret:
         secretName: "datadog-secret"
         keyName: "api-key"
-    clusterName: vps-okd
   features:
     apm:
       enabled: true
@@ -19,9 +18,6 @@ spec:
           - name: "default-target"
             ddTraceVersions:
               python: "4"
-            # ddTraceConfigs:
-            #   - name: "DD_PROFILING_ENABLED"
-            #     value: "auto"
     logCollection:
       enabled: true
       containerCollectAll: true
