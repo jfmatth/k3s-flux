@@ -19,4 +19,4 @@ spec:
       order: asc
 
   digestReflectionPolicy: Always
-  interval: 60m
+  interval: 10m

@@ -4,7 +4,7 @@ metadata:
   name: justneverlift
   namespace: justneverlift
 spec:
-  interval: 60m
+  interval: 10m
   chart:
     spec:
       chart: ./_helm
